@@ -1,0 +1,38 @@
+A user defined function is small program written by the user to perform operations within SQL statements. 
+These operations tend to be easy to perform using another language and difficult to perform using SQL.
+
+The benefits of UDFs are their use in many different places when compared to SQL stored procedures, such as using 
+UDFs’ table features to break up complex code into shorter code blocks. UDFs also allow users to pass in parameters 
+into database objects, as well as allowing users to return values that are based on any scalar values in the database.
+
+Queries are database operations that retrieve information. These operations are usually written in a query language, 
+such as SQL, XQuery, and DMX.
+
+Stored Procedures are subroutines stored in the database catalog that allow the users to write procedures in simple, 
+general-purpose languages. These procedures can then be used in queries to perform computations that cannot be performed 
+in the query language alone.
+
+The difference between UDFs and stored procedures are minimal.
+
+PostgreSQL is an open-source, object relational database management system. It supports a majority of the SQL standard 
+and offers complex queries, foreign keys, and transactional integrity, among other features. It can also be extended 
+through features such as data types, functions, and procedural languages.
+
+PostgreSQL traces its roots from the POSTGRES package made at the University of California at Berkeley. This software 
+was first used in 1986, and was implemented in production and research applications, such as a medical information 
+database, an asteroid tracking database, and a financial data analysis system.
+
+While POSTGRES usage doubled in 1993, it also became a burden to Berkeley because of the large amounts of time Berkeley 
+devoted to maintenance and support. In 1994, Andrew Yu and Jolly Chen made some improvements to POSTGRES, including 
+adding a SQL language interpreter, trimming the source code size by 25%, and improving performance and maintainability. 
+This new version was called Postgres95 and was released as open-source code.
+
+In 1996, Postgres95 shifted its focus from fixing bugs in the server code to augmenting its features and capabilities 
+(while still making improvements in all areas). Postgres95 was also renamed as PostgreSQL to show connection between 
+Berkeley’s POSTGRES project and the latest versions with SQL.
+
+PostgreSQL has four types of functions:
+1. SQL functions
+2. Procedural language UDFs
+3. Internal functions written in C (PostgreSQL’s source code language)
+4. C language UDFs
