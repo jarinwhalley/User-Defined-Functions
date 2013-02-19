@@ -1,0 +1,11 @@
+CREATE OR REPLACE FUNCTION si_prcp_pgsql(prcp real)
+  RETURNS real AS
+$BODY$
+BEGIN
+  RETURN prcp * 2.54;
+END;
+$BODY$
+  LANGUAGE plpgsql VOLATILE
+  COST 100;
+ALTER FUNCTION si_prcp_pgsql(real)
+  OWNER TO jarin;
