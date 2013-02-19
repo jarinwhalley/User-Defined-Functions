@@ -12,7 +12,10 @@ Stored Procedures are subroutines stored in the database catalog that allow the 
 general-purpose languages. These procedures can then be used in queries to perform computations that cannot be performed 
 in the query language alone.
 
-The difference between UDFs and stored procedures are minimal.
+The difference between UDFs and stored procedures are minimal. Stored procedures allow users to set each parameter as 
+“IN”, “OUT”, or “INOUT”. This indicates whether the specific parameter is input-only, output-only, or input and output. 
+Functions parameters are input-only, but they must specify a return-value type, which allows them to return information 
+from the function.
 
 PostgreSQL is an open-source, object relational database management system. It supports a majority of the SQL standard 
 and offers complex queries, foreign keys, and transactional integrity, among other features. It can also be extended 
@@ -21,6 +24,10 @@ through features such as data types, functions, and procedural languages.
 PostgreSQL traces its roots from the POSTGRES package made at the University of California at Berkeley. This software 
 was first used in 1986, and was implemented in production and research applications, such as a medical information 
 database, an asteroid tracking database, and a financial data analysis system.
+
+The POSTGRES package was designed to be neutral concerning programming languages, because most databases at the time 
+were accessed by programs written in different languages, such as spreadsheet software that is written in languages 
+that are different from database or some programming languages.
 
 While POSTGRES usage doubled in 1993, it also became a burden to Berkeley because of the large amounts of time Berkeley 
 devoted to maintenance and support. In 1994, Andrew Yu and Jolly Chen made some improvements to POSTGRES, including 
