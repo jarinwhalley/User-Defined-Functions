@@ -1,0 +1,9 @@
+CREATE OR REPLACE FUNCTION si_prcp_sql(prcp real)
+  RETURNS real AS
+$BODY$
+  SELECT $1 * 2.54::real;
+ $BODY$
+  LANGUAGE sql VOLATILE
+  COST 100;
+ALTER FUNCTION si_prcp_sql(real)
+  OWNER TO jarin;
