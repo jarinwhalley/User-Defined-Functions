@@ -43,3 +43,13 @@ PostgreSQL has four types of functions:
 2. Procedural language UDFs
 3. Internal functions written in C (PostgreSQL’s source code language)
 4. C language UDFs
+
+
+
+note: To install python to a particular database, use “createlang plpythonu dbname” in shell or “CREATE EXTENSION 
+plpythonu” in query editor. You can also use plpython2u instead of plpythonu. Syntax differences between python 2 and 
+3 do not appear to make a difference, though specifying in the shell “python” brings up python2, while specifying 
+“python3” brings up python3.
+
+note: You must install pllua.sql, which is located in /usr/share/postgresql/9.1/contrib. This is done by entering the 
+directory and typing “psql –f pllua.sql dbname”.
