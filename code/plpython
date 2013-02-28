@@ -1,0 +1,4 @@
+CREATE OR REPLACE FUNCTION si_prcp_py(prcp real) 
+RETURNS real AS $$
+  return prcp *2.54
+$$ LANGUAGE plpython2u;
