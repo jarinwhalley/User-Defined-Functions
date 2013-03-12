@@ -71,4 +71,4 @@ note: You must install pllua.sql, which is located in /usr/share/postgresql/9.1/
 directory and typing “psql –f pllua.sql dbname”.
 
 note: Because of unknown reasons, this PL/Lua function does not work using the "REAL" data type. It works fine with the
-"FLOAT" type, using type conversion on the table data.
+double precision type, using type conversion on the table data.
