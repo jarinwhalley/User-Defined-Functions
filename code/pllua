@@ -1,6 +1,6 @@
-CREATE OR REPLACE FUNCTION si_prcp_lua(prcp real) 
-RETURNS real AS $$
-  return prcp *2.54
+CREATE OR REPLACE FUNCTION si_prcp_lua(prcp double precision) 
+RETURNS double precision AS $$
+  return (prcp *2.54)
 $$ LANGUAGE pllua;
 
--- This code compiles, but currently does not give the correct query output.
+-- This code compiles, but currently uses the double precision type instead of the real type.
