@@ -44,7 +44,23 @@ PostgreSQL has four types of functions:
 3. Internal functions written in C (PostgreSQL’s source code language)
 4. C language UDFs
 
+SQL functions are written in the regular SQL language for PostgreSQL and do not need any extra packages to install.
 
+Procedural language UDFs are UDFs written in languages besides SQL and C. These languages, called procedural languages,
+can be installed into the PostgreSQL server via loadable modules.
+
+Internal functions are functions statically linked into the PostgreSQL server and are written in C. These functions are
+declared during the initialization of the database cluster, but the user can create additional alias names for the
+function (in addition to the SQL-use name) after initialization.
+
+C language functions are similar to internal functions in terms of coding conventions. The differences are that the
+functions can be written in C-compatible languages, such as C++. Another major difference is that these functions can be
+loaded into the server on demand, instead of being loaded only upon initialization. C language functions are compiled
+into loadable objects (shared libraries) and are loaded whenever the server needs them.
+
+
+note: PostgreSQL 9.2 offers for SQL functions the ability to use parameter names within the function. PostgreSQL 9.1
+does not have the ability. Therefore the user must use "$1" for example to take the place of a variable.
 
 note: To install python to a particular database, use “createlang plpythonu dbname” in shell or “CREATE EXTENSION 
 plpythonu” in query editor. You can also use plpython2u instead of plpythonu. Syntax differences between python 2 and 
@@ -53,3 +69,6 @@ plpythonu” in query editor. You can also use plpython2u instead of plpythonu. 
 
 note: You must install pllua.sql, which is located in /usr/share/postgresql/9.1/contrib. This is done by entering the 
 directory and typing “psql –f pllua.sql dbname”.
+
+note: Because of unknown reasons, this PL/Lua function does not work using the "REAL" data type. It works fine with the
+"FLOAT" type, using type conversion on the table data.
