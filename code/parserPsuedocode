@@ -20,23 +20,23 @@ expression values:
 
 Grammer rules:
 
-expression  ->  M  ' + '  M			      	    =>  " + "
-		        ->  M  ' - '  M			          	=>  " - "
-	        	->  M
+expression  	->  M  ' + '  M			=>  " + "
+		->  M  ' - '  M			=>  " - "
+	        ->  M
 
-M		        ->  U  ' * '  U			          	=>  " * "
-	        	->  U  ' / '  U			          	=>  " / "
-	        	->  U  ' % '  U			          	=>  " % "
-	         	->  U
+M	        ->  U  ' * '  U			=>  " * "
+        	->  U  ' / '  U			=>  " / "
+        	->  U  ' % '  U			=>  " % "
+         	->  U
 
-U		        ->  primary  ' ! '		         	=>  " ! "
-	        	->  ' - '	primary			          =>  " - "
-	        	->  ' + '  primary		        	=>  " + "
-	        	->  primary  ' ^ ' primary	  	=>  " ^ "
-	        	->  primary
+U		->  primary  ' ! '		=>  " ! "
+	        ->  ' - '	primary         =>  " - "
+	        ->  ' + '  primary		=>  " + "
+	        ->  primary  ' ^ ' primary	=>  " ^ "
+	        ->  primary
 
-primary	    ->  'number'				            =>  "number"
-		        ->  '('  'expression'  ')'
+primary		->  'number'			=>  "number"
+		->  '('  'expression'  ')'
 
 
 Psuedo-code
@@ -157,5 +157,11 @@ def parse (expression)
 	ct = scan;		# current token
 	nt = ++scan;		# next token
 
+	op1;
+	op2;
+	op3;
+	operator;		# temporary variables used for algebraic operations
+
 	while not expression.eof
+
 		
