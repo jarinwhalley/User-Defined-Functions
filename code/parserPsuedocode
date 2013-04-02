@@ -147,3 +147,15 @@ primary();
 
 	NT = scan();
 }
+
+
+
+Python code (incomplete):
+
+def parse (expression)
+
+	ct = scan;		# current token
+	nt = ++scan;		# next token
+
+	while not expression.eof
+		
