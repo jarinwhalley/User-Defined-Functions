@@ -1,0 +1,149 @@
+algebraic parser pseudo-code:
+
+num values: 
+anything w/ integers, 
+decimal points, 
+'e' and integer w/ positive/negative sign, 
+positive/negative signs in front of integers at beginning of string, //opt
+integers around '^'
+
+expression values:
+( ), [], {}
++
+-
+*
+/
+%
+! factorial //opt
+' - ',  ' + ' unary operators
+
+
+Grammer rules:
+
+expression  ->  M  ' + '  M			      	    =>  " + "
+		        ->  M  ' - '  M			          	=>  " - "
+	        	->  M
+
+M		        ->  U  ' * '  U			          	=>  " * "
+	        	->  U  ' / '  U			          	=>  " / "
+	        	->  U  ' % '  U			          	=>  " % "
+	         	->  U
+
+U		        ->  primary  ' ! '		         	=>  " ! "
+	        	->  ' - '	primary			          =>  " - "
+	        	->  ' + '  primary		        	=>  " + "
+	        	->  primary  ' ^ ' primary	  	=>  " ^ "
+	        	->  primary
+
+primary	    ->  'number'				            =>  "number"
+		        ->  '('  'expression'  ')'
+
+
+Psuedo-code
+
+main() 
+{
+  NT = scan();
+	expression();
+}
+
+expression()
+{
+	M();
+
+	if( NT = =  ' + ' )
+	{
+		Read( ' + ' );
+		M();
+		BuildTree ( ' + ' );
+	}
+	if( NT = =  ' - ' )
+	{
+		Read( ' - ' );
+		M();
+		BuildTree ( ' - ' );
+	}
+
+	NT = scan();
+}
+
+
+M();
+{
+	U();
+
+	if( NT = =  ' * ' )
+	{
+		Read( ' * ' );
+		U();
+		BuildTree( ' * ' );
+	}
+	if( NT = =  ' / ' )
+	{
+		Read( ' / ' );
+		U();
+		BuildTree( ' / ' );
+	}
+	if( NT = =  ' % ' )
+	{
+		Read( ' % ' );
+		U();
+		BuildTree( ' % ' );
+	}
+
+	NT = scan();
+}
+
+
+U();
+{
+	if( NT = =  ' ! ' )
+	{
+		primary();
+		Read( ' ! ' );
+		BuildTree ( ' ! ' );
+	}
+	else if( NT = =  ' - ' )
+	{
+		Read( ' - ' );
+		primary();
+		BuildTree ( ' - ' );
+	}
+	else if( NT = =  ' + ' )
+	{
+		Read( ' + ' );
+		primary();
+		BuildTree ( ' + ' );
+	}
+	else if( NT = =  ' ^ ' )
+	{
+		primary();
+		Read( ' ^ ' );
+		primary();
+		BuildTree ( ' ^ ' );
+	}
+	else
+	{
+		primary();
+	}
+
+	NT = scan();
+}
+
+
+primary();
+{
+	if( NT is a number )
+	{
+		Read( 'number' );
+		BuildTree( 'number' );
+	}
+	if( NT = =  ' ( ' )
+	{
+		Read( ' ( ' );
+		expression();
+		Read( ' ) ' );
+	}
+
+	NT = scan();
+}
