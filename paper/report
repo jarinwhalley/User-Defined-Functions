@@ -63,6 +63,12 @@ into loadable objects (shared libraries) and are loaded whenever the server need
 note: PostgreSQL 9.2 offers for SQL functions the ability to use parameter names within the function. PostgreSQL 9.1
 does not have the ability. Therefore the user must use "$1" for example to take the place of a variable.
 
+PL/pgSQL is a procedural langauge for PostgreSQL. It is designed with capabilities such as creating functions and 
+trigger procedures, inheriting user-defined types/functions/operators, as well as other capabilities that SQL have, but
+also extends SQL by adding control structures and the ability to perform complex calculations. One of the major 
+advantages of PL/pgSQL is that groups of queries can be blocked together and stored in the database server. This
+eliminates unnecessary communication overhead caused by multiple individual queries and unneeded results.
+
 Python is an interpreted, object-oriented programming language. It is extensible to C/C++ as well as applications that
 need a programmable interface. Created by Guido van Rossum, Python was made to have both the features of the scripting
 language ABC and the extensibility that ABC did not have.
