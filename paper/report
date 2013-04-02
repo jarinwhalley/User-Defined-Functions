@@ -59,8 +59,16 @@ loaded into the server on demand, instead of being loaded only upon initializati
 into loadable objects (shared libraries) and are loaded whenever the server needs them.
 
 
+
 note: PostgreSQL 9.2 offers for SQL functions the ability to use parameter names within the function. PostgreSQL 9.1
 does not have the ability. Therefore the user must use "$1" for example to take the place of a variable.
+
+Python is an interpreted, object-oriented programming language. It is extensible to C/C++ as well as applications that
+need a programmable interface. Created by Guido van Rossum, Python was made to have both the features of the scripting
+language ABC and the extensibility that ABC did not have.
+
+PL/Python in PostgreSQL is only available in the untrusted version, as denoted by "plpythonu". Untrusted means that the 
+language does not restrict the actions of the user.
 
 note: To install python to a particular database, use “createlang plpythonu dbname” in shell or “CREATE EXTENSION 
 plpythonu” in query editor. You can also use plpython2u instead of plpythonu. Syntax differences between python 2 and 
