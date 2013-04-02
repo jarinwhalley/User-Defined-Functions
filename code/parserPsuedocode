@@ -162,6 +162,8 @@ def parse (expression)
 	op3;
 	operator;		# temporary variables used for algebraic operations
 
+	stack;			# list that will be used like a stack
+
 	while not expression.eof
 
-		
+		stack.append() = ct;
