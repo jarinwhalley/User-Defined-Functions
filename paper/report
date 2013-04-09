@@ -76,6 +76,10 @@ language ABC and the extensibility that ABC did not have.
 PL/Python in PostgreSQL is only available in the untrusted version, as denoted by "plpythonu". Untrusted means that the 
 language does not restrict the actions of the user.
 
+Lua is also an interpreted language that is used in many industrial and gaming applications. Designed by researchers
+at the Pontifical Catholic University of Rio de Janeiro, Lua is extendable written in other languages, as well as 
+allowing the user to extend other languages with Lua. It is also known for being one of the fastest scripting languages.
+
 note: To install python to a particular database, use “createlang plpythonu dbname” in shell or “CREATE EXTENSION 
 plpythonu” in query editor. You can also use plpython2u instead of plpythonu. Syntax differences between python 2 and 
 3 do not appear to make a difference, though specifying in the shell “python” brings up python2, while specifying 
