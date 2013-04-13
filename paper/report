@@ -1,8 +1,8 @@
 A user defined function is small program written by the user to perform operations within SQL statements. 
 These operations tend to be easy to perform using another language and difficult to perform using SQL.
 
-The benefits of UDFs are their use in many different places when compared to SQL stored procedures, such as using 
-UDFs’ table features to break up complex code into shorter code blocks. UDFs also allow users to pass in parameters 
+The benefits of UDFs are that they can be used in many different places when compared to SQL stored procedures, such as 
+using UDFs’ table features to break up complex code into shorter code blocks. UDFs also allow users to pass in parameters 
 into database objects, as well as allowing users to return values that are based on any scalar values in the database.
 
 Queries are database operations that retrieve information. These operations are usually written in a query language, 
