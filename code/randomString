@@ -1,0 +1,12 @@
+-- function to create random strings
+CREATE OR REPLACE FUNCTION rand_plus_string()
+RETURNS text AS $$
+
+    SELECT random()*1000 || '+' || random()*1000;
+
+$$ LANGUAGE sql;
+
+
+-- insert command
+INSERT INTO localTest
+    SELECT rand_plus_string() FROM generate_series(1,10);
