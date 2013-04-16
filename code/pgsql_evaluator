@@ -1,0 +1,11 @@
+CREATE OR REPLACE FUNCTION algebra_pgsql(str1 text)
+RETURNS double precision AS $$
+
+declare
+    result double precision;
+begin 
+    execute str1 into result;
+    return result;
+end;
+
+$$ LANGUAGE plpgsql;
