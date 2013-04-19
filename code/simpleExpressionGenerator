@@ -1,0 +1,26 @@
+CREATE OR REPLACE FUNCTION rand_simple_string()
+RETURNS text AS $$
+
+DECLARE
+  operate integer;
+	expression text;
+BEGIN
+	operate = trunc(random()*6);
+
+	CASE operate
+		WHEN 0 THEN
+			expression = random()*1000 || '+' || random()*1000;
+		WHEN 1 THEN
+			expression = random()*1000 || '-' || random()*1000;
+		WHEN 2 THEN
+			expression = random()*1000 || '*' || random()*1000;
+		WHEN 3 THEN
+			expression = random()*1000 || '/' || random()*1000;
+		WHEN 4 THEN
+			expression = random()*1000 || '%' || random()*1000;
+		WHEN 5 THEN
+			expression = random()*1000 || '^' || random()*1000;
+	END CASE;
+
+	RETURN expression;
+END;
