@@ -24,3 +24,5 @@ BEGIN
 
 	RETURN expression;
 END;
+
+$$ LANGUAGE plpgsql;
