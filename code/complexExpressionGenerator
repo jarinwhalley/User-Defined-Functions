@@ -1,0 +1,43 @@
+CREATE OR REPLACE FUNCTION rand_complex_string()
+RETURNS text AS $$
+
+DECLARE
+  numOperands integer;
+	expression text;
+	operate integer;
+BEGIN
+	-- determine number of operands
+	numOperands = trunc((random() * 100) + 1);
+
+	-- create first operand
+	expression = cast(random()*1000 as text);
+
+	FOR counter IN 2..numOperands BY 1 LOOP
+
+		-- create operator
+		operate = trunc(random()*6);
+
+		CASE operate
+			WHEN 0 THEN
+				expression = expression || '+';
+			WHEN 1 THEN
+				expression = expression || '-';
+			WHEN 2 THEN
+				expression = expression || '*';
+			WHEN 3 THEN
+				expression = expression || '/';
+			WHEN 4 THEN
+				expression = expression || '%';
+			WHEN 5 THEN
+				expression = expression || '^';
+		END CASE;
+
+		-- create operand
+		expression = expression || random()*1000;
+
+	END LOOP;
+
+	RETURN expression;
+END;
+
+$$ LANGUAGE plpgsql;
