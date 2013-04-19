@@ -1,0 +1,7 @@
+CREATE OR REPLACE FUNCTION algebra_python (str1 text)
+RETURNS double precision AS $$
+
+  result = eval(str1)
+	return result
+
+$$ LANGUAGE plpythonu;
