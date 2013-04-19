@@ -1,0 +1,8 @@
+CREATE OR REPLACE FUNCTION algebra_lua (str1 text)
+RETURNS double precision AS $$
+
+  f = loadstring("result = " .. str1)
+	f()
+	return result
+
+$$ LANGUAGE plluau;
